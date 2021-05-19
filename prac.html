@@ -14,6 +14,13 @@
         <!-- <script scr="style.js"></script> -->
         <div class="pentagon"></div>
         <div class="text">Hello</div>
+        <div class="triangle"></div>
+        <div class="box"></div>
+        <div class="oval"></div>
+        <div class="grid">
+            <div class="text">welcome</div>
+        </div>
+
         <script>
             anime({
                 targets: '.pentagon',
@@ -29,6 +36,65 @@
                 {value:0, duration:2000}
                 ],
               });
+              anime({
+                targets: '.box',
+                translateY: [
+                {value:200, duration:2000},
+                {value:0, duration:2000}
+                ],
+                translateX: [
+                {value:200, duration:2000},
+                {value:0, duration:2000}
+                ],
+                scale: 1,
+                rotate: '1turn'
+                  });
+              anime({
+                targets: '.oval',
+                left: '240px',
+                backgroundColor: '#FFF',
+                borderRadius: ['0%', '50%'],
+                easing: 'easeInOutQuad'
+              });
+              var logEl = document.querySelector('');
+
+var battery = {
+  charged: '0%',
+  cycles: 120
+}
+
+anime({
+  targets: battery,
+  charged: '100%',
+  cycles: 130,
+  round: 1,
+  easing: 'linear',
+  update: function() {
+    logEl.innerHTML = JSON.stringify(battery);
+  }
+});
+anime({
+    targets: '.grid',
+    scale: [
+      {value: .1, easing: 'easeOutSine', duration: 500},
+      {value: 1, easing: 'easeInOutQuad', duration: 1200}
+    ],
+    delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
+  });
+  
+  
+  var animation = anime({
+    targets: '.text',
+    translateX: 270,
+    delay: function(el, i) { return i * 100; },
+    direction: 'alternate',
+    loop: true,
+    autoplay: false,
+    easing: 'easeInOutSine'
+  });
+  
+  document.querySelector('.play-pause-demo .play').onclick = animation.play;
+  document.querySelector('.play-pause-demo .pause').onclick = animation.pause;
         </script>
     </body>
 

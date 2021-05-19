@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="demo.css">
+        <title>Anime</title>
+        <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+
+    </head>
+    <body style="background-color: black;">
+<ul class="nav">
+    <a href="" id="aLeft">Images</a><hr>
+    <a href="demo.html">Back</a>
+    <nav class="cl-effect-3">
+       <a onclick="up()"></a>
+       <a class="active" onclick=""></a>
+    </nav>
+ </ul>
+ 
+ <div id="easing" >
+   <div class="square el">
+     
+     <img class="left" src="img1.jpg" onclick="left()">
+     
+   <img class="right" src="img2.jpg" onclick="right()">
+     
+   <img class="right" src="img3.jpg" onclick="right()">
+   
+   <img class="left" src="img4.jpg" onclick="left()">
+
+   <img class="center" src="img5.jpg" onclick="center()">
+ </div>
+ 
+ <script>
+ function right() {
+ var easing = anime({
+   targets: '#easing .el',
+   translateX: '-25%',
+     backgroundColor: '#32e1e1',
+   easing: 'easeInOutQuart'
+ });
+ var easing = anime({
+   targets: 'h1.right',
+   opacity: 1,
+   easing: 'easeInOutQuart'
+ });
+ var easing = anime({
+   targets: 'h1.center, h1.left',
+   opacity: 0,
+   easing: 'easeInOutQuart'
+ });}
+  
+ function center() {
+ var easing = anime({
+   targets: '#easing .el',
+   translateX: 0,
+   backgroundColor: '#00affa',
+   easing: 'easeInOutQuart'
+ });
+ var easing = anime({
+   targets: 'h1.center',
+   opacity: 1,
+   easing: 'easeInOutQuart'
+ });
+ var easing = anime({
+   targets: 'h1.right, h1.left',
+   opacity: 0,
+   easing: 'easeInOutQuart'
+ });}
+ 
+ function left() {
+ var easing = anime({
+   targets: '#easing .el',
+   translateX: '25%',
+       backgroundColor: '#fac8fa',
+   easing: 'easeInOutQuart'
+ });
+ var easing = anime({
+   targets: 'h1.left',
+   opacity: 1,
+   easing: 'easeInOutQuart'
+ });
+ var easing = anime({
+   targets: 'h1.right, h1.center',
+   opacity: 0,
+   easing: 'easeInOutQuart'
+ });}
+   
+ function up() {
+ var easing = anime({
+   targets: '.about',
+   top: 0,
+   easing: 'easeInOutQuart'
+ });}
+   
+ function down() {
+ var easing = anime({
+   targets: '.about',
+   top: '100%',
+   easing: 'easeInOutQuart'
+ });}
+ </script>
+    </body>
+</html>

@@ -1,10 +1,10 @@
-/* .box{
+.box{
     width: 100px;
     height: 100px;
     margin: 40px;
     background-color:blue;
     
-}; */
+};
 
 .pentagon {
     position: relative;
@@ -13,7 +13,7 @@
     border-width: 50px 18px 0;
     border-style: solid;
     border-color: red transparent;
-    margin: 40px;
+    margin: 100px;
   }
   .pentagon:before {
     content: "";
@@ -27,17 +27,34 @@
     border-color: transparent transparent red;
   }
 
-  /* .triangle-up {
+  .triangle-up {
 	width: 0;
 	height: 0;
 	border-left: 25px solid transparent;
 	border-right: 25px solid transparent;
 	border-bottom: 50px solid #555;
-} */
+}
 
-/* .oval {
+.oval {
     height: 50px;
     width: 100px;
     background-color: #555;
     border-radius: 50%;
-  } */
+    margin: 40px;
+  }
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+  }
+  
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
